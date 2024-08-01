@@ -1,0 +1,31 @@
+[
+    {
+        "name": "💻 Essentials Cloud",
+        "desc": "Una comunidad de programación en Español.",
+        "url": "https://github.com/yxsifdev",
+        "targets": [
+            "Discord",
+            "Programación"
+        ]
+    },
+    {
+        "name": "🎨 Essentials Cloud UI",
+        "desc": "Una comunidad de programación en Español.",
+        "url": "https://github.com/yxsifdev",
+        "targets": [
+            "Astro",
+            "Tailwind",
+            "UI"
+        ]
+    },
+    {
+        "name": "🤖 Bot de Discord",
+        "desc": "Hecho con JavaScript, discord.js, MongoDB.",
+        "url": "https://github.com/yxsifdev",
+        "targets": [
+            "Discord",
+            "MongoDB",
+            "discord.js"
+        ]
+    }
+]

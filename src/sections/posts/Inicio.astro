@@ -1,0 +1,11 @@
+---
+import BackHome from "@/components/BackHome.astro";
+import PostsList from "@/components/posts/PostsList";
+// import ShowAllPosts from "@/components/posts/ShowAllPosts.astro";
+import allPosts from "@/data/allPosts.json";
+---
+
+<section class="flex justify-between mb-20">
+  <PostsList initialPosts={allPosts} client:load />
+  <BackHome />
+</section>
