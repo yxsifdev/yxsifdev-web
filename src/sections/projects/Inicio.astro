@@ -1,10 +1,9 @@
 ---
 import BackHome from "@/components/BackHome.astro";
 import ProjectsList from "@/components/projects/ProjectsList";
-import allPosts from "@/data/allPosts.json";
 ---
 
 <section class="flex justify-between mb-20">
-  <ProjectsList initialPosts={allPosts} client:visible />
+  <ProjectsList client:load />
   <BackHome />
 </section>

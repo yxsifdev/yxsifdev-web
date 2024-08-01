@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from "react";
 import allProjects from "@/data/allProjects.json";
 
-interface Post {
+interface Project {
   name: string;
   desc: string;
   url: string;
   targets: string[];
 }
 
-const PostsList: React.FC = () => {
-  const [posts, setPosts] = useState<Post[]>(allProjects);
+const ProjectsList: React.FC = () => {
+  const [projects, setProjects] = useState<Project[]>(allProjects);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    const filteredPosts = allProjects.filter(
-      (post: Post) =>
-        post.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.desc.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.targets.some((tag) =>
+    const filteredProjects = allProjects.filter(
+      (project: Project) =>
+        project.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        project.desc.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        project.targets.some((tag) =>
           tag.toLowerCase().includes(searchTerm.toLowerCase())
         )
     );
-    setPosts(filteredPosts);
+    setProjects(filteredProjects);
   }, [searchTerm]);
 
   return (
@@ -39,22 +39,22 @@ const PostsList: React.FC = () => {
         ✨ Aquí podrás encontrar mis proyectos y repositorios de GitHub.
       </span>
       <div className="grid grid-cols-1 gap-4 overflow-x-hidden">
-        {posts.length > 0 ? (
-          posts.map((post, index) => (
+        {projects.length > 0 ? (
+          projects.map((project, index) => (
             <div
               key={index}
               className="border border-white/10 p-4 rounded-lg hover:bg-white/5 transition cursor-pointer"
             >
               <a
-                href={post.url}
+                href={project.url}
                 target="_blank"
                 className="text-lg font-semibold mb-2 hover:underline"
               >
-                {post.name}
+                {project.name}
               </a>
-              <p className="text-sm text-gray-300 my-3">{post.desc}</p>
+              <p className="text-sm text-gray-300 my-3">{project.desc}</p>
               <div className="flex flex-wrap gap-2">
-                {post.targets.map((tag, tagIndex) => (
+                {project.targets.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
                     className="text-xs text-white/50 border border-white/5 bg-white/5 px-2 py-1 rounded"
@@ -73,4 +73,4 @@ const PostsList: React.FC = () => {
   );
 };
 
-export default PostsList;
+export default ProjectsList;
