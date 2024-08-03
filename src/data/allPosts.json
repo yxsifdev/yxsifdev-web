@@ -1,8 +1,8 @@
 [
     {
         "name": "Hello, World!",
-        "content": "Aprende a hacer tu primer Hello World. Te mostraré lo básico para aprender JavaScript.",
-        "url": "",
+        "content": "Hola mundo en JavaScript.",
+        "url": "hello-world-js",
         "targets": [
             "Snippets"
         ]
@@ -10,7 +10,7 @@
     {
         "name": "Code Highlight",
         "content": "Como crear bloques de código. Te mostraré lo básico para aprender JavaScript.",
-        "url": "",
+        "url": "code-highlight-astro",
         "targets": [
             "Snippets"
         ]
@@ -18,7 +18,7 @@
     {
         "name": "Como centrar un div",
         "content": "Como centrar un div con css y tailwind 🫢. Te mostraré lo básico para aprender JavaScript.",
-        "url": "",
+        "url": "centrar-div",
         "targets": [
             "Snippets"
         ]
@@ -26,7 +26,7 @@
     {
         "name": "Aprendiendo JavaScript",
         "content": "Te mostraré lo básico para aprender JavaScript. Te mostraré lo básico para aprender JavaScript.",
-        "url": "",
+        "url": "aprendiendo-js",
         "targets": [
             "Snippets",
             "Tools"

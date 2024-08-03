@@ -9,7 +9,7 @@ import "@fontsource-variable/inter";
 // Supports weights 100-700
 import "@fontsource-variable/roboto-mono";
 import { ViewTransitions } from "astro:transitions";
-import icon from "public/favicon.ico";
+import icon from "@/resources/images/yxsifdev.jpg";
 ---
 
 <!doctype html>
@@ -19,7 +19,7 @@ import icon from "public/favicon.ico";
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <!-- <link rel="icon" type="image/svg+xml" href="public/favicon.ico" /> -->
-    <link rel="shortcut icon" href={icon} type="image/x-icon" />
+    <link rel="shortcut icon" href={icon.src} type="image/x-icon" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
@@ -49,5 +49,8 @@ import icon from "public/favicon.ico";
     color-scheme: dark;
     background-size: 224px;
     overflow-x: hidden;
+  }
+  ::selection {
+    background-color: #ffffff2a;
   }
 </style>

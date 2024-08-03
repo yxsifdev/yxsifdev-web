@@ -1,0 +1,24 @@
+---
+import type { GetStaticPaths } from "astro";
+import PostsLayout from "@/layouts/PostsLayout.astro";
+import allPosts from "@/data/allPosts.json";
+
+export function getStaticPaths() {
+  return allPosts.map((post) => ({
+    params: { post: post.url },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<PostsLayout title={post.name}>
+  <main>
+    <h1>{post.name}</h1>
+    <p>{post.content}</p>
+    <div>
+      {post.targets.map((tag) => <span>{tag}</span>)}
+    </div>
+  </main>
+</PostsLayout>

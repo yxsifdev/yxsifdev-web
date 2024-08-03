@@ -45,13 +45,15 @@ const PostsList: React.FC = () => {
               key={index}
               className="border border-white/10 p-4 rounded-lg hover:bg-white/5 transition cursor-pointer"
             >
-              <a
-                href={post.url}
-                target="_blank"
-                className="text-lg font-semibold mb-2 hover:underline"
-              >
-                {post.name}
-              </a>
+              <div className="flex justify-between items-baseline">
+                <a
+                  href={`/posts/post/${index + 1}`}
+                  className="text-lg font-semibold mb-2 hover:underline"
+                >
+                  {post.name}
+                </a>
+                <span>{`#${index + 1}`}</span>
+              </div>
               <p className="text-sm text-gray-300 my-3">{post.content}</p>
               <div className="flex flex-wrap gap-2">
                 {post.targets.map((tag, tagIndex) => (

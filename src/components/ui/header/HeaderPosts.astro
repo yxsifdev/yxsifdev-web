@@ -1,0 +1,20 @@
+---
+import { ListLinks } from "@/consts/ListLinksPosts";
+---
+
+<header>
+  <div class="flex justify-end">
+    <div class="flex justify-end">
+      {
+        ListLinks.map((link, index) => (
+          <>
+            <a href={link.path} class="hover:underline">
+              {link.name}
+            </a>
+            {index < ListLinks.length - 1 && " / "}
+          </>
+        ))
+      }
+    </div>
+  </div>
+</header>

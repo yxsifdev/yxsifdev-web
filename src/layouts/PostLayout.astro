@@ -1,31 +1,46 @@
 ---
 interface Props {
   title: string;
+  frontmatter: any;
 }
-
-const { title } = Astro.props;
 
 import "@fontsource-variable/inter";
 // Supports weights 100-700
 import "@fontsource-variable/roboto-mono";
+import "@fontsource/geist-mono";
 import { ViewTransitions } from "astro:transitions";
 import icon from "@/resources/images/yxsifdev.jpg";
+import HeaderPosts from "@/components/ui/header/HeaderPosts.astro";
+import Navigation from "@/components/posts/Navigation.astro";
+import BackHome from "@/components/BackHome.astro";
+
+const { frontmatter } = Astro.props;
+const { title, description, date, targets, author } = frontmatter;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href={icon.src} type="image/x-icon" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>Post: {title}</title>
     <ViewTransitions />
   </head>
-  <body>
-    <slot />
+  <body class="">
+    <!-- <HeaderPosts /> -->
+    <div class="flex h-screen">
+      <div class="hidden md:block w-[300px] p-5 border-r border-white/20">
+        <Navigation />
+        <BackHome />
+      </div>
+      <div class="w-full py-5 pl-5 pr-10">
+        <slot />
+      </div>
+    </div>
   </body>
 </html>
 <style is:global>
@@ -52,5 +67,11 @@ import icon from "@/resources/images/yxsifdev.jpg";
   }
   ::selection {
     background-color: #ffffff2a;
+  }
+  .astro-code {
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
   }
 </style>
